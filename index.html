@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .projects, .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .card p {
+            color: #555;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer | Designer | Programmer</p>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section class="section about-me">
+            <h2>About Me</h2>
+            <p>Hi! I'm Your Name, a passionate web developer with experience in HTML, CSS, JavaScript, and more. I love creating beautiful and functional websites. Feel free to explore my work!</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects">
+            <h2>My Projects</h2>
+            <div class="card">
+                <h3>Project 1</h3>
+                <p>A description of your project goes here. Include what technologies you used and what you learned from it.</p>
+                <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Project 2</h3>
+                <p>A description of your project goes here. Mention any special features or challenges you faced.</p>
+                <a href="https://github.com/yourusername/project2" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Project 3</h3>
+                <p>A brief description of your project. You can share the project link and demonstrate its functionality.</p>
+                <a href="https://github.com/yourusername/project3" target="_blank">View Project</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills">
+            <h2>Skills</h2>
+            <div class="card">
+                <h3>HTML & CSS</h3>
+                <p>Experienced in creating responsive and accessible web pages with HTML and CSS.</p>
+            </div>
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Proficient in JavaScript for building interactive web applications.</p>
+            </div>
+            <div class="card">
+                <h3>React</h3>
+                <p>Building fast and dynamic user interfaces with React.</p>
+            </div>
+            <div class="card">
+                <h3>Node.js</h3>
+                <p>Backend development using Node.js and Express for building scalable applications.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Connect with me: <a href="https://github.com/yourusername" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/yourname" target="_blank">LinkedIn</a></p>
+        <p>&copy; 2025 Your Name</p>
+    </footer>
+</body>
+</html>
