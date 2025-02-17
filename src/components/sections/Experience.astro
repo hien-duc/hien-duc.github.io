@@ -1,0 +1,268 @@
+---
+const experiences = [
+  {
+    title: "Education",
+    icon: "🎓",
+    items: [
+      {
+        name: "Eastern International University",
+        role: "Software Engineering",
+        period: "October 2021 – Present",
+        details: ["Key Subjects: Web Development"],
+        achievements: ["Dean's List Student"]
+      }
+    ]
+  },
+  {
+    title: "Certifications",
+    icon: "🏆",
+    items: [
+      {
+        name: "IELTS",
+        details: ["Score: 6.5"],
+        achievements: ["Strong English communication skills"]
+      },
+      {
+        name: "EIU Programming Contest",
+        details: ["Season 1 – Participant"],
+        achievements: ["Algorithm and problem-solving skills"]
+      }
+    ]
+  }
+];
+---
+
+<section id="experience" class="experience">
+  <div class="section-header animate-fade-in">
+    <h2 class="section-title">Experience & Education</h2>
+    <p class="section-subtitle">My academic journey and achievements</p>
+  </div>
+
+  <div class="experience-grid">
+    {experiences.map((category, categoryIndex) => (
+      <div class="experience-category animate-slide-up" 
+           style={`animation-delay: ${categoryIndex * 0.2}s`}>
+        <div class="category-header">
+          <span class="category-icon">{category.icon}</span>
+          <h3>{category.title}</h3>
+        </div>
+        <div class="timeline">
+          {category.items.map((item, itemIndex) => (
+            <div class="timeline-item"
+                 style={`animation-delay: ${(categoryIndex * 0.2) + (itemIndex * 0.1)}s`}>
+              <div class="timeline-content">
+                <h4>{item.name}</h4>
+                {item.role && <p class="role">{item.role}</p>}
+                {item.period && <p class="period">{item.period}</p>}
+                <ul class="details">
+                  {item.details.map(detail => <li>{detail}</li>)}
+                </ul>
+                {item.achievements && (
+                  <div class="achievements">
+                    {item.achievements.map(achievement => (
+                      <span class="achievement-tag">✨ {achievement}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+  
+  <div class="background-decoration"></div>
+</section>
+
+<style>
+  .experience {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .experience-category {
+    background: rgba(36, 40, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .timeline-content h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .role {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+
+  .period {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .details {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .details li {
+    color: var(--text-secondary);
+    margin: 0.25rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .details li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+  }
+
+  .achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .achievement-tag {
+    background: rgba(167, 139, 250, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+  }
+
+  .background-decoration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(167, 139, 250, 0.1) 0%,
+      rgba(139, 92, 246, 0.05) 30%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  @media (max-width: 768px) {
+    .experience {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(4px);
+    }
+  }
+</style>

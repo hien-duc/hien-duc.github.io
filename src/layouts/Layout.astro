@@ -1,0 +1,81 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Duc Tran | Full-Stack Developer",
+  description = "Full-Stack Developer specializing in Java, Rust, TypeScript, and modern web technologies"
+} = Astro.props;
+import '../styles/animations.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with reveal class
+      document.querySelectorAll('.reveal').forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #a78bfa;
+    --secondary-color: #8b5cf6;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --bg-primary: #1a1b26;
+    --bg-secondary: #24283b;
+    --nav-bg: rgba(26, 27, 38, 0.8);
+    --card-bg: #24283b;
+    --card-hover: #2f334d;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>

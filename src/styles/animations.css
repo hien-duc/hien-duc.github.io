@@ -1,0 +1,81 @@
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Slide Up */
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Slide In From Left */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Slide In From Right */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRight 0.8s ease forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Intersection Observer Utility Classes */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

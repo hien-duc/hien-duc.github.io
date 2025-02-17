@@ -1,0 +1,239 @@
+---
+const contacts = [
+  {
+    label: "Email",
+    value: "duc.t.cit21@eiu.edu.vn",
+    link: "mailto:duc.t.cit21@eiu.edu.vn",
+    icon: "📧"
+  },
+  {
+    label: "GitHub",
+    value: "github.com/hien-duc",
+    link: "https://github.com/hien-duc",
+    icon: "💻"
+  },
+  {
+    label: "Location",
+    value: "Binh Duong, Vietnam",
+    icon: "📍"
+  }
+];
+---
+
+<section id="contact" class="contact">
+  <div class="section-header animate-fade-in">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">Let's connect and create something amazing together</p>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-grid">
+      {contacts.map((contact, index) => (
+        <div class="contact-item animate-slide-up" 
+             style={`animation-delay: ${index * 0.1}s`}>
+          <div class="contact-icon">{contact.icon}</div>
+          <div class="contact-content">
+            <h3>{contact.label}</h3>
+            {contact.link ? (
+              <a href={contact.link} 
+                 target="_blank" 
+                 rel="noopener"
+                 class="contact-link">
+                <span class="link-text">{contact.value}</span>
+                <span class="link-arrow">→</span>
+              </a>
+            ) : (
+              <p>{contact.value}</p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="background-glow"></div>
+</section>
+
+<style>
+  .contact {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .contact-item {
+    background: rgba(36, 40, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(167, 139, 250, 0.3);
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
+  }
+
+  .contact-content {
+    flex: 1;
+  }
+
+  h3 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .contact-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .link-text {
+    position: relative;
+  }
+
+  .link-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transition: width 0.3s ease;
+  }
+
+  .contact-link:hover .link-text::after {
+    width: 100%;
+  }
+
+  .link-arrow {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--primary-color);
+  }
+
+  .contact-link:hover .link-arrow {
+    transform: translateX(5px);
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .background-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(167, 139, 250, 0.1) 0%,
+      rgba(139, 92, 246, 0.05) 30%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+    }
+  }
+</style>

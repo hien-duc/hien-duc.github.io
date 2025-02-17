@@ -1,0 +1,178 @@
+---
+const skillCategories = [
+  {
+    title: "Languages",
+    icons: "java,rust,typescript,cs",
+    description: "Core programming languages for building robust applications"
+  },
+  {
+    title: "Frontend",
+    icons: "html,css,react,nextjs",
+    description: "Modern web technologies for creating responsive interfaces"
+  },
+  {
+    title: "Backend",
+    icons: "spring,nodejs,dotnet",
+    description: "Server-side technologies for scalable applications"
+  },
+  {
+    title: "Database",
+    icons: "mongodb,mysql,supabase",
+    description: "Database solutions for efficient data management"
+  },
+  {
+    title: "DevOps & Tools",
+    icons: "docker,kubernetes,git,linux",
+    description: "Tools for deployment, version control, and development"
+  }
+];
+---
+
+<section id="skills" class="skills">
+  <div class="section-header animate-fade-in">
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-subtitle">Technologies I work with</p>
+  </div>
+
+  <div class="skills-grid">
+    {skillCategories.map((category, index) => (
+      <div class="skill-category animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+        <h3>{category.title}</h3>
+        <p class="category-description">{category.description}</p>
+        <div class="skill-icons">
+          <img
+            src={`https://skillicons.dev/icons?i=${category.icons}&theme=dark`}
+            alt={`${category.title} skills`}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="background-glow"></div>
+</section>
+
+<style>
+  .skills {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .skill-category {
+    background: rgba(36, 40, 59, 0.8);
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .category-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+  }
+
+  .skill-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-icons img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.1));
+    transition: filter 0.3s ease;
+  }
+
+  .skill-category:hover .skill-icons {
+    transform: scale(1.05);
+  }
+
+  .skill-category:hover .skill-icons img {
+    filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.2));
+  }
+
+  .background-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(167, 139, 250, 0.1) 0%,
+      rgba(139, 92, 246, 0.05) 30%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .skills {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+      padding: 0 1.5rem;
+    }
+
+    .category-description {
+      min-height: auto;
+    }
+  }
+</style>
