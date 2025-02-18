@@ -1,53 +1,61 @@
 ---
 const contacts = [
   {
-    label: "Email",
-    value: "duc.t.cit21@eiu.edu.vn",
-    link: "mailto:duc.t.cit21@eiu.edu.vn",
-    icon: "📧"
+    label: 'Email',
+    value: 'duc.t.cit21@eiu.edu.vn',
+    link: 'mailto:duc.t.cit21@eiu.edu.vn',
+    icon: '📧',
   },
   {
-    label: "GitHub",
-    value: "github.com/hien-duc",
-    link: "https://github.com/hien-duc",
-    "icon": "🐙"
+    label: 'GitHub',
+    value: 'github.com/hien-duc',
+    link: 'https://github.com/hien-duc',
+    icon: '🐙',
   },
   {
-    label: "Location",
-    value: "Binh Duong, Vietnam",
-    icon: "📍"
-  }
-];
+    label: 'Location',
+    value: 'Binh Duong, Vietnam',
+    icon: '📍',
+  },
+]
 ---
 
 <section id="contact" class="contact">
   <div class="section-header animate-fade-in">
     <h2 class="section-title">Get in Touch</h2>
-    <p class="section-subtitle">Let's connect and create something amazing together</p>
+    <p class="section-subtitle">
+      Let's connect and create something amazing together
+    </p>
   </div>
 
   <div class="contact-container">
     <div class="contact-grid">
-      {contacts.map((contact, index) => (
-        <div class="contact-item animate-slide-up" 
-             style={`animation-delay: ${index * 0.1}s`}>
-          <div class="contact-icon">{contact.icon}</div>
-          <div class="contact-content">
-            <h3>{contact.label}</h3>
-            {contact.link ? (
-              <a href={contact.link} 
-                 target="_blank" 
-                 rel="noopener"
-                 class="contact-link">
-                <span class="link-text">{contact.value}</span>
-                <span class="link-arrow">→</span>
-              </a>
-            ) : (
-              <p>{contact.value}</p>
-            )}
+      {
+        contacts.map((contact, index) => (
+          <div
+            class="contact-item animate-slide-up"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="contact-icon">{contact.icon}</div>
+            <div class="contact-content">
+              <h3>{contact.label}</h3>
+              {contact.link ? (
+                <a
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-link"
+                >
+                  <span class="link-text">{contact.value}</span>
+                  <span class="link-arrow">→</span>
+                </a>
+              ) : (
+                <p>{contact.value}</p>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 
@@ -69,7 +77,11 @@ const contacts = [
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(
+      83.21deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -115,7 +127,11 @@ const contacts = [
 
   .contact-icon {
     font-size: 2rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
@@ -151,7 +167,11 @@ const contacts = [
     height: 1px;
     bottom: -2px;
     left: 0;
-    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(
+      83.21deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
     transition: width 0.3s ease;
   }
 
@@ -195,8 +215,12 @@ const contacts = [
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {

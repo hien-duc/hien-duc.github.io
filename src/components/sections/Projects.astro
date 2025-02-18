@@ -1,27 +1,28 @@
 ---
 const projects = [
   {
-    title: "Chinese Chess",
-    description: "Modern Chinese Chess Platform with real-time multiplayer gameplay",
-    tech: ["Next.js 15", "TypeScript", "MongoDB"],
-    link: "https://github.com/hien-duc/xiangqi-chinese-chess-online-platform",
-    icon: "🎮"
+    title: 'Chinese Chess',
+    description:
+      'Modern Chinese Chess Platform with real-time multiplayer gameplay',
+    tech: ['Next.js 15', 'TypeScript', 'MongoDB'],
+    link: 'https://github.com/hien-duc/xiangqi-chinese-chess-online-platform',
+    icon: '🎮',
   },
   {
-    title: "Lumine Library Management",
-    description: "Library management system using Spring Boot microservices",
-    tech: ["Spring Boot", "React", "TypeScript"],
-    link: "https://github.com/hien-duc/lumine-library-management-system",
-    icon: "📚"
+    title: 'Lumine Library Management',
+    description: 'Library management system using Spring Boot microservices',
+    tech: ['Spring Boot', 'React', 'TypeScript'],
+    link: 'https://github.com/hien-duc/lumine-library-management-system',
+    icon: '📚',
   },
   {
-    title: "SpendWise",
-    description: "Mobile financial tracker using React Native and Supabase",
-    tech: ["React Native", "Supabase", "TypeScript"],
-    link: "https://github.com/hien-duc/spendwise-mobile-financial-tracker",
-    icon: "💰"
-  }
-];
+    title: 'SpendWise',
+    description: 'Mobile financial tracker using React Native and Supabase',
+    tech: ['React Native', 'Supabase', 'TypeScript'],
+    link: 'https://github.com/hien-duc/spendwise-mobile-financial-tracker',
+    icon: '💰',
+  },
+]
 ---
 
 <section id="projects" class="projects">
@@ -29,28 +30,32 @@ const projects = [
     <h2 class="section-title">Featured Projects</h2>
     <p class="section-subtitle">Some of my recent work</p>
   </div>
-  
+
   <div class="projects-grid">
-    {projects.map((project, index) => (
-      <a 
-        href={project.link} 
-        class="project-card animate-slide-up" 
-        target="_blank" 
-        rel="noopener"
-        style={`animation-delay: ${index * 0.2}s`}
-      >
-        <div class="card-content">
-          <div class="project-icon">{project.icon}</div>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <div class="tech-stack">
-            {project.tech.map(tech => <span class="tech-tag">{tech}</span>)}
+    {
+      projects.map((project, index) => (
+        <a
+          href={project.link}
+          class="project-card animate-slide-up"
+          target="_blank"
+          rel="noopener"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <div class="card-content">
+            <div class="project-icon">{project.icon}</div>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div class="tech-stack">
+              {project.tech.map((tech) => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      </a>
-    ))}
+        </a>
+      ))
+    }
   </div>
-  
+
   <div class="background-shapes">
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
@@ -70,7 +75,11 @@ const projects = [
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(
+      83.21deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -104,7 +113,11 @@ const projects = [
   .project-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
@@ -172,7 +185,11 @@ const projects = [
   }
   .shape {
     position: absolute;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
     border-radius: 50%;
     opacity: 0.1;
   }
@@ -191,8 +208,13 @@ const projects = [
     animation: float 10s ease-in-out infinite reverse;
   }
   @keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(30px, -30px) rotate(180deg); }
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(30px, -30px) rotate(180deg);
+    }
   }
   @media (max-width: 768px) {
     .projects-grid {

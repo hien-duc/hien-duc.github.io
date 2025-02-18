@@ -1,35 +1,35 @@
 ---
 const experiences = [
   {
-    title: "Education",
-    icon: "🎓",
+    title: 'Education',
+    icon: '🎓',
     items: [
       {
-        name: "Eastern International University",
-        role: "Software Engineering",
-        period: "October 2021 – Present",
-        details: ["Key Subjects: Web Development"],
-        achievements: ["Dean's List Student"]
-      }
-    ]
+        name: 'Eastern International University',
+        role: 'Software Engineering',
+        period: 'October 2021 – Present',
+        details: ['Key Subjects: Web Development'],
+        achievements: ["Dean's List Student"],
+      },
+    ],
   },
   {
-    title: "Certifications",
-    icon: "🏆",
+    title: 'Certifications',
+    icon: '🏆',
     items: [
       {
-        name: "IELTS",
-        details: ["Score: 6.5"],
-        achievements: ["Strong English communication skills"]
+        name: 'IELTS',
+        details: ['Score: 6.5'],
+        achievements: ['Strong English communication skills'],
       },
       {
-        name: "EIU Programming Contest",
-        details: ["Season 1 – Participant"],
-        achievements: ["Algorithm and problem-solving skills"]
-      }
-    ]
-  }
-];
+        name: 'EIU Programming Contest',
+        details: ['Season 1 – Participant'],
+        achievements: ['Algorithm and problem-solving skills'],
+      },
+    ],
+  },
+]
 ---
 
 <section id="experience" class="experience">
@@ -39,39 +39,47 @@ const experiences = [
   </div>
 
   <div class="experience-grid">
-    {experiences.map((category, categoryIndex) => (
-      <div class="experience-category animate-slide-up" 
-           style={`animation-delay: ${categoryIndex * 0.2}s`}>
-        <div class="category-header">
-          <span class="category-icon">{category.icon}</span>
-          <h3>{category.title}</h3>
-        </div>
-        <div class="timeline">
-          {category.items.map((item, itemIndex) => (
-            <div class="timeline-item"
-                 style={`animation-delay: ${(categoryIndex * 0.2) + (itemIndex * 0.1)}s`}>
-              <div class="timeline-content">
-                <h4>{item.name}</h4>
-                {item.role && <p class="role">{item.role}</p>}
-                {item.period && <p class="period">{item.period}</p>}
-                <ul class="details">
-                  {item.details.map(detail => <li>{detail}</li>)}
-                </ul>
-                {item.achievements && (
-                  <div class="achievements">
-                    {item.achievements.map(achievement => (
-                      <span class="achievement-tag">✨ {achievement}</span>
+    {
+      experiences.map((category, categoryIndex) => (
+        <div
+          class="experience-category animate-slide-up"
+          style={`animation-delay: ${categoryIndex * 0.2}s`}
+        >
+          <div class="category-header">
+            <span class="category-icon">{category.icon}</span>
+            <h3>{category.title}</h3>
+          </div>
+          <div class="timeline">
+            {category.items.map((item, itemIndex) => (
+              <div
+                class="timeline-item"
+                style={`animation-delay: ${categoryIndex * 0.2 + itemIndex * 0.1}s`}
+              >
+                <div class="timeline-content">
+                  <h4>{item.name}</h4>
+                  {item.role && <p class="role">{item.role}</p>}
+                  {item.period && <p class="period">{item.period}</p>}
+                  <ul class="details">
+                    {item.details.map((detail) => (
+                      <li>{detail}</li>
                     ))}
-                  </div>
-                )}
+                  </ul>
+                  {item.achievements && (
+                    <div class="achievements">
+                      {item.achievements.map((achievement) => (
+                        <span class="achievement-tag">✨ {achievement}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
-  
+
   <div class="background-decoration"></div>
 </section>
 
@@ -90,7 +98,11 @@ const experiences = [
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(
+      83.21deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -128,7 +140,11 @@ const experiences = [
 
   .category-icon {
     font-size: 2rem;
-    background: linear-gradient(83.21deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(
+      83.21deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -189,7 +205,7 @@ const experiences = [
   }
 
   .details li::before {
-    content: "•";
+    content: '•';
     color: var(--primary-color);
     position: absolute;
     left: 0;
